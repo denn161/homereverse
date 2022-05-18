@@ -4,8 +4,22 @@
        navBar = document.querySelector('[data-navbar]'),
        overlay = document.querySelector('.overlay'),
        navbarLinks = navBar.querySelectorAll('.navbar__link'),
-       header = document.querySelector('.header')      
-  
+       header = document.querySelector('.header')    
+       
+       const anchors=navBar.querySelectorAll('a[href*="#"]')
+             
+       anchors.forEach((item)=>{
+           item.addEventListener('click',(e)=>{
+               e.preventDefault()
+              const blockId = item.getAttribute('href')
+              document.querySelector(`${blockId}`).scrollIntoView({
+                  behavior:"smooth",
+                  block:"start"
+              })
+
+           })
+       })
+          
 
     function openMenu(){
         navBar.classList.add('show')
@@ -26,7 +40,7 @@
 
      navbarLinks.forEach((link)=>{
          link.addEventListener('click',(e)=>{
-             e.preventDefault()
+           
              closeMenu()
 
          })
@@ -38,6 +52,7 @@
 
      window.addEventListener('scroll',showHeader)
 
+    
     
 
      
