@@ -24,14 +24,14 @@
     function openMenu(){
         navBar.classList.add('show')
         overlay.classList.add('active')
-        document.body.overflow='hidden'       
+        document.body.style.overflow='hidden'       
       
     }
 
     function closeMenu(){
         navBar.classList.remove('show')
         overlay.classList.remove('active')
-        document.body.overflow='auto'    
+        document.body.style.overflow='auto'    
        
     }
      opentBtn.addEventListener('click',openMenu)
